@@ -19,37 +19,62 @@
 </style>
 
 <div class="card">
-  <h3>UROP, HKUST — Advisor: Dan Xu (Jun-Aug 2023)</h3>
+  <h3>UROP, HKUST — Advisor: Dan Xu (Jun–Aug 2023)</h3>
   <ul>
-    <li>Worked on depth estimation using diffusion models.</li>
-    <li>Implemented UNet-based architecture inspired by <i>DepthGen</i>.</li>
-    <li>Designed interpolation algorithm for NYU-Depth V2 to reduce distribution shift.</li>
+    <li>Developed a <strong>conditional diffusion model</strong> for monocular depth estimation from RGB images.</li>
+    <li>Built an <strong>Efficient-UNet</strong> with residuals and optimized up/down-sampling to preserve depth structures.</li>
+    <li>Designed a two-step <strong>depth infilling algorithm</strong> for handling missing values in NYU Depth V2.</li>
+    <li>Applied <strong>Step-Unrolled Denoising (SUD)</strong> and masked losses to mitigate distribution shift on incomplete maps.</li>
+    <li>Finetuned under compute limits to improve depth completeness and global scene consistency.</li>
   </ul>
 </div>
 
 <div class="card">
-  <h3>UROP, HKUST — Advisor: Yu Hu (Sep-Dec 2023)</h3>
+  <h3>UROP, HKUST — Advisor: Yu Hu (Sep–Dec 2023)</h3>
   <ul>
-    <li>Studied the Firing Rate Network Model to simulate zebrafish neural dynamics.</li>
-    <li>Analyzed neural data using statistical and machine learning methods.</li>
-    <li>Applied Physics-Informed Neural Networks (PINNs) to model recurrent circuits.</li>
+    <li>Modeled <strong>brain-wide neural dynamics in zebrafish</strong> using a recurrent <strong>Firing Rate Network</strong>.</li>
+    <li>Implemented <strong>firing rate evolution equations</strong> with Poisson inputs and synaptic filtering.</li>
+    <li>Simulated large-scale circuits and trained synaptic connectivity via <strong>Partial In-Network Training (PINning)</strong> with Recursive Least Squares.</li>
+    <li>Analyzed structural patterns in connectivity to identify potential subnetworks and functional motifs.</li>
   </ul>
 </div>
 
 <div class="card">
-  <h3>KnowComp Group, HKUST — Advisor: Yangqiu Song (Feb-Sep 2024)</h3>
+  <h3>KnowComp Group, HKUST — Advisor: Yangqiu Song (Feb–Sep 2024)</h3>
   <ul>
-    <li><strong>BrainASER</strong>: Explored structural alignment between fMRI brain data and knowledge graphs.</li>
-    <li><strong>IntentionQA</strong>: Co-authored <a href="https://arxiv.org/abs/2406.10173" target="_blank">IntentionQA</a> (Findings of EMNLP 2024).<br />
-        Project GitHub: <a href="https://github.com/HKUSTKnowComp/IntentionQA" target="_blank">IntentionQA</a></li>
+    <li><strong>BrainASER</strong>: Studied correspondences between neural activity and <strong>knowledge graph</strong> structures.</li>
+    <li>Aligned fMRI data (Narratives dataset) with story-based stimuli to analyze brain-language interactions.</li>
+    <li>Developed brain-inspired representations for downstream NLP tasks leveraging structural similarities with knowledge graphs.</li>
+    <li><strong>IntentionQA</strong>: Built a benchmark to evaluate LMs’ understanding of purchase intentions in E-commerce.</li>
+    <li>Preprocessed data, aligned products with intentions via ASER, and generated negative distractors.</li>
+    <li>Evaluated 19 LMs, identifying reasoning limitations in predicting user intent and handling real-world E-commerce scenarios.</li>
   </ul>
 </div>
 
 <div class="card">
-  <h3>RenLab, HKUST — Advisor: <a href="https://mayrfung.github.io/" target="_blank">Yi R. (May) Fung</a> (Feb 2025 - Present)</h3>
+  <h3>Washington University in St. Louis — Advisor: Marion Neumann (Sep–Dec 2024)</h3>
   <ul>
-    <li>Researching medical image editing and building automatic evaluation pipelines to assess multimodal model performance in clinical and research settings.</li>
-    <li>Investigating tool usage efficiency under model context protocols in multi-agent collaboration.</li>
-    <!-- <li>Developing agent-based simulation systems grounded in real-world legislation and policy documents to predict and analyze the societal impact of public policies. <i>(Ongoing)</i></li> -->
+    <li>Developed an <strong>inductive recommendation system</strong> for new e-commerce products using the Amazon Co-Purchasing Network.</li>
+    <li>Constructed a co-purchasing graph with 519K nodes and 964K edges, encoding product features, categories, and structural metrics.</li>
+    <li>Applied a <strong>modified GraphSAGE</strong> for link prediction to enable recommendations for isolated nodes with limited data.</li>
+    <li>Designed scalable, real-time updates for adaptive recommendations on dynamic product catalogs.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>RenLab, HKUST — Advisor: Yi R. (May) Fung (Feb–Jun 2025)</h3>
+  <ul>
+    <li>Researched <strong>text-guided medical image editing</strong> and developed evaluation frameworks for multimodal models.</li>
+    <li>Contributed to <strong>MedEBench</strong>, a benchmark of 1,182 clinical image-prompt triplets across 70 tasks and 13 anatomical regions.</li>
+    <li>Designed clinically grounded metrics for <strong>Editing Accuracy, Contextual Preservation, and Visual Quality</strong> using ROI-based assessments and attention-grounding analysis.</li>
+    <li>Evaluated seven state-of-the-art models, identifying common failure patterns in medically meaningful edits.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>RenLab, HKUST — Advisor: Yi R. (May) Fung; Collaborator: Li Yuxin (May 2025 – Current)</h3>
+  <ul>
+    <li>Formalize physics concepts and statements into <strong>Lean</strong>, enabling rigorous machine-verified reasoning.</li>
+    <li>Develop representations of laws and principles to facilitate automated derivations and proofs.</li>
   </ul>
 </div>
