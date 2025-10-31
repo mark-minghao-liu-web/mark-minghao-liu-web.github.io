@@ -189,7 +189,17 @@
         button.textContent = 'Show';
       }
     }
-    
+    function toggleFigure(button) {
+      const div = button.nextElementSibling;
+      if (div.style.display === 'none') {
+        div.style.display = 'block';
+        button.textContent = 'Hide Overview Figure';
+      } else {
+        div.style.display = 'none';
+        button.textContent = 'Show Overview Figure';
+      }
+    }
+
     loadSection("publications-content", "publications.html");
     loadSection("research-content", "research.html");
     loadSection("activities-content", "activities.html");
