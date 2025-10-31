@@ -146,8 +146,11 @@
   </div>
 
   <div class="section">
-    <h2 id="research">Research</h2>
-    <div id="research-content">Loading research...</div>
+    <h2 id="research">Research Experience</h2>
+    <button id="toggle-research" onclick="toggleResearch()" style="margin-bottom: 10px;">Show</button>
+    <div id="research-content" style="display: none;">
+      Loading research...
+    </div>
   </div>
 
   <div class="section">
@@ -170,7 +173,23 @@
           console.error(`Error loading ${file}:`, error);
         });
     }
-
+    function toggleResearch() {
+      const content = document.getElementById('research-content');
+      const button = document.getElementById('toggle-research');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        button.textContent = 'Hide';
+        // Load only when first opened
+        if (!content.dataset.loaded) {
+          loadSection('research-content', 'research.html');
+          content.dataset.loaded = true;
+        }
+      } else {
+        content.style.display = 'none';
+        button.textContent = 'Show';
+      }
+    }
+    
     loadSection("publications-content", "publications.html");
     loadSection("research-content", "research.html");
     loadSection("activities-content", "activities.html");
