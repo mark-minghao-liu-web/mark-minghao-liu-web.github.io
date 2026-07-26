@@ -91,20 +91,21 @@
     <a href="#publications">Publications</a> |
     <a href="#research">Research</a> |
     <a href="#activities">Activities</a> |
+    <a href="profile.html">Manage Profile</a> |
     <a href="LIU_Minghao_CV.pdf" target="_blank">CV</a>
   </nav>
 
   <h1>Minghao (Mark) Liu 刘明昊</h1>
-  <img src="images/Me.jpg" alt="Minghao Liu" class="profile-img" />
-  <p style="text-align: center;">The Hong Kong University of Science and Technology, Hong Kong SAR, China</p>
+  <img id="profile-photo" src="images/Me.jpg" alt="Minghao Liu" class="profile-img" />
+  <p id="profile-affiliation" style="text-align: center;">The Hong Kong University of Science and Technology, Hong Kong SAR, China</p>
   <p style="text-align: center;">
-    Email: <a class="email" href="mailto:mliuby@connect.ust.hk">mliuby@connect.ust.hk</a>
+    Email: <a id="profile-email" class="email" href="mailto:mliuby@connect.ust.hk">mliuby@connect.ust.hk</a>
   </p>
   <p style="text-align: center;">
-    <a href="https://x.com/liu34836428" target="_blank">X / Twitter</a> |
-    <a href="https://scholar.google.com/citations?user=o37OuuAAAAAJ&hl=en" target="_blank">Google Scholar</a> |
-    <a href="https://www.linkedin.com/in/minghao-liu-2a70a9280/" target="_blank">LinkedIn</a> |
-    WeChat: <code>binghailong2004</code>
+    <a data-profile-link="twitter" href="https://x.com/liu34836428" target="_blank">X / Twitter</a> |
+    <a data-profile-link="scholar" href="https://scholar.google.com/citations?user=o37OuuAAAAAJ&hl=en" target="_blank">Google Scholar</a> |
+    <a data-profile-link="linkedin" href="https://www.linkedin.com/in/minghao-liu-2a70a9280/" target="_blank">LinkedIn</a> |
+    <span id="profile-wechat">WeChat: <code>binghailong2004</code></span>
   </p>
 
   <div class="section">
@@ -121,10 +122,6 @@
     </ol>
     <p>
       I also have experience in formal language (e.g., Lean) and neural circuit modeling.
-    </p>
-    <p>
-    <strong style="color:red;">I am currently seeking a long-term research internship starting February 2026 in LLM agentic learning, including Deep Research Agents, Long-Context Generation, and Adaptive Reasoning, with a focus on experience trajectories, web-integrated knowledge, and Reinforcement Fine-Tuning.
-</strong>
     </p>
   </div>
 
@@ -164,6 +161,21 @@
   </div>
 
   <script>
+    const profileDefaults = { name: 'Minghao (Mark) Liu', affiliation: 'The Hong Kong University of Science and Technology, Hong Kong SAR, China', email: 'mliuby@connect.ust.hk', photo: 'images/Me.jpg', twitter: 'https://x.com/liu34836428', scholar: 'https://scholar.google.com/citations?user=o37OuuAAAAAJ&hl=en', linkedin: 'https://www.linkedin.com/in/minghao-liu-2a70a9280/', wechat: 'binghailong2004' };
+    const savedProfile = JSON.parse(localStorage.getItem('personalProfile') || '{}');
+    const profile = { ...profileDefaults, ...savedProfile };
+    document.querySelector('h1').textContent = profile.name;
+    document.title = `${profile.name} | Home`;
+    document.getElementById('profile-affiliation').textContent = profile.affiliation;
+    const email = document.getElementById('profile-email');
+    email.textContent = profile.email;
+    email.href = `mailto:${profile.email}`;
+    const photo = document.getElementById('profile-photo');
+    photo.src = profile.photo;
+    photo.alt = profile.name;
+    document.querySelectorAll('[data-profile-link]').forEach(link => link.href = profile[link.dataset.profileLink]);
+    document.getElementById('profile-wechat').textContent = `WeChat: ${profile.wechat}`;
+
     function loadSection(targetId, file) {
       fetch(file)
         .then(response => response.text())
